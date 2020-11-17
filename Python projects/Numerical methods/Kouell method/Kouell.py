@@ -4,7 +4,7 @@ import numpy as np
 def func(x, y):
     return 1 / (x + 1) - 5 / (y**2 + 1)
 
-d = 2
+d = 2   #length of the interval
 dx = 0.001
 N = (int)(d / dx)
 
@@ -15,6 +15,8 @@ f = np.zeros(N + 3)
 x[0] = 1
 y[0] = 1
 
+
+#Euler
 f[0] = func(x[0], y[0])
 y[1] = y[0] + dx * f[0]
 
@@ -26,6 +28,7 @@ y[3] = y[2] + dx * f[2]
 
 f[3] = func(x[0] + 3*dx, y[3])
 
+#Kouell
 for n in range(1, N):
     x[n] = x[0] + n * dx
     y[n + 1] = y[n] + (dx / 24) * (-f[n + 2] + 13 * f[n + 1] + 13 * f[n] - f[n - 1])
