@@ -13,7 +13,7 @@ public:
     ~LogDuration(){
         auto finish = steady_clock::now();
         auto dur = finish - start;
-        cerr << message << duration_cast<microseconds>(dur).count() << " mcs" << endl;
+        cerr << message << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     }
 private:
     steady_clock::time_point start;
