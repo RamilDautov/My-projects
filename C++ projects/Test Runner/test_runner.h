@@ -9,8 +9,6 @@
 #include <string>
 #include <vector>
 
-//Comment
-
 template <class T>
 std::ostream& operator << (std::ostream& os, const std::vector<T>& s) {
     os << "{";
